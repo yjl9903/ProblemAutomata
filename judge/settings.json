@@ -1,0 +1,16 @@
+{
+    "args": {
+        "std": "c++11",
+        "macro": [
+            "XLor"
+        ],
+        "args": [
+            "-O2", "-Wl,--stack=268435456"
+        ]
+    },
+    "data": {
+        "path": "data\\",
+        "input-suffix": "in",
+        "output-suffix": "out"
+    }
+}
