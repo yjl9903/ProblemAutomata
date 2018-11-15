@@ -1,3 +1,9 @@
+# Now
+
+1. Judge Compiler: Test OK.
+
+2. websocket: Test OK.
+
 # Target
 
 1. 随机生成数据
