@@ -1,8 +1,14 @@
+# Top
+
+Now, this project will be the prototype of a new Online Judge.
+
 # Now
 
 1. Judge Compiler: Test OK.
 
 2. websocket: Test OK.
+
+3. markdown and mathjax: Test OK.
 
 # Target
 
@@ -48,7 +54,7 @@
 
 ## Need
 
-1. bootstrap.
+1. bootstrap
 
 2. markdown解析
 
