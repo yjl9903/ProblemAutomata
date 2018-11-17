@@ -9,8 +9,9 @@
         ]
     },
     "testcase": {
+        // name format: path + index + '.' + suffix
         "path": "data\\",
-        "num": 2,
+        "num": 2, // base-index = 0
         "input-suffix": "in",
         "output-suffix": "out"
     }
