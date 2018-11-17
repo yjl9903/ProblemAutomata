@@ -8,8 +8,9 @@
             "-O2", "-Wl,--stack=268435456"
         ]
     },
-    "data": {
+    "testcase": {
         "path": "data\\",
+        "num": 2,
         "input-suffix": "in",
         "output-suffix": "out"
     }
