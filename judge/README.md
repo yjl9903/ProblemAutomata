@@ -44,3 +44,22 @@
 7. `test(self)`
 
     测试所有数据返回运行结果。
+
+# Checker
+
+```python
+def checker(name, options, generator = "init.exe", dataPath = "..\\input\\", inputFile = "", outputFile = "")
+```
+
++ name: 待测程序名
+
++ options: 参数列表
+
++ generator: 数据生成器命令
+
++ dataPath: 生成数据路径，数据生成器生成数据放在 dataPath + name + ".in"
+
++ inputFile: 自定义输入路径，如果定义了 inputFile 将不会使用默认路径
+
++ outputFile: 自定义输出路径
+

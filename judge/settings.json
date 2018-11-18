@@ -9,7 +9,7 @@
         ]
     },
     "testcase": {
-        "path": "data\\",
+        "path": "input\\",
         "num": 2,
         "input-suffix": ".in",
         "output-suffix": ".out"

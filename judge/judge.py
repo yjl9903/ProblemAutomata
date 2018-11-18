@@ -19,7 +19,7 @@ class Judger(object):
     file = "a.exe"
     maxTime = 0.0
 
-    def __init__(self, cfg, src, binary = "std.exe", maxTime = 1000, compiled = False):
+    def __init__(self, cfg, src = "", binary = "std.exe", maxTime = 1000, compiled = False):
         self.config = cfg
         self.src = src
         self.file = binary
