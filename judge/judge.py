@@ -19,11 +19,12 @@ class Judger(object):
     file = "a.exe"
     maxTime = 0.0
 
-    def __init__(self, cfg, src, binary = "std.exe", maxTime = 1000):
+    def __init__(self, cfg, src, binary = "std.exe", maxTime = 1000, compiled = False):
         self.config = cfg
         self.src = src
         self.file = binary
         self.maxTime = maxTime / 1000.0
+        self.compiled = compiled
         
         args = cfg['args']
         self.cmd += " -std=" + args['std']
@@ -34,15 +35,18 @@ class Judger(object):
         # print(self.cmd)
 
     def compile(self):
+        if self.compiled:
+            return
         cmd = self.cmd + " " + self.src + " -o " + self.file
         out = os.popen(cmd).read()
+        self.compiled = True
 
     def getOutput(self):
         self.compile()
         testcase = self.config['testcase']
         path = testcase['path']
-        insuf = '.' + testcase['input-suffix']
-        outsuf = '.' + testcase['output-suffix']
+        insuf = testcase['input-suffix']
+        outsuf = testcase['output-suffix']
 
         for i in range(testcase['num']):
             output, usedTime = self.running(path + str(i) + insuf)
@@ -59,8 +63,8 @@ class Judger(object):
         output = parseOutput(output.split('\n'))
 
         with open(res, "r") as f:
-            ans = map(lambda x : x.rstrip(), f.readlines())
-
+            # ans = map(lambda x : x.rstrip(), f.readlines())
+            ans = [x.rstrip() for x in f.readlines()]
         if ans != output:
             return "Wrong Answer"
         return True
@@ -84,8 +88,8 @@ class Judger(object):
         self.compile()
         testcase = self.config['testcase']
         path = testcase['path']
-        insuf = '.' + testcase['input-suffix']
-        outsuf = '.' + testcase['output-suffix']
+        insuf = testcase['input-suffix']
+        outsuf = testcase['output-suffix']
         # print num
         for i in range(testcase['num']):
             res = self.run(path + str(i) + insuf, path + str(i) + outsuf)
@@ -93,11 +97,9 @@ class Judger(object):
                 return res
         return "Accepted"
 
-data = {}
-with open("settings.json", "r") as f:
-    data = json.loads(f.read())
-
-jd = Judger(data, "a.cpp", maxTime = 1000)
-# print jd.run()
+# data = {}
+# with open(r"D:\5-Project\problemAutomata\judge\settings.json", "r") as f:
+#     data = json.loads(f.read())
+# jd = Judger(data, "a.cpp", maxTime = 1000)
 # jd.getOutput()
-print jd.test()
+# print(jd.test())

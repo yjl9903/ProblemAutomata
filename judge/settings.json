@@ -1,4 +1,4 @@
-{
+{ 
     "args": {
         "std": "c++11",
         "macro": [
@@ -9,10 +9,9 @@
         ]
     },
     "testcase": {
-        // name format: path + index + '.' + suffix
         "path": "data\\",
-        "num": 2, // base-index = 0
-        "input-suffix": "in",
-        "output-suffix": "out"
+        "num": 2,
+        "input-suffix": ".in",
+        "output-suffix": ".out"
     }
 }
