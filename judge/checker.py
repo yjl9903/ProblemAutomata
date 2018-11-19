@@ -43,7 +43,7 @@ def checker(name, options, generator = "init.exe", dataPath = "..\\input\\", inp
     return output
 
 data = {}
-with open(r"D:\5-Project\problemAutomata\judge\settings.json", "r") as f:
+with open(r"D:\5-Project\problemAutomata\settings.json", "r") as f:
     data = json.loads(f.read())
 
 
